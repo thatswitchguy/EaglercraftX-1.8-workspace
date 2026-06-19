@@ -1,6 +1,16 @@
-modules = ["java-graalvm22.3", "web", "nodejs-20"]
+run = ["cd target_teavm_javascript/javascript && python3 -m http.server 3000"]
+modules = ["java-graalvm22.3", "nodejs-20", "python-3.11", "web"]
 [agent]
 expertMode = true
 
 [nix]
 channel = "stable-25_05"
+
+[[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+
